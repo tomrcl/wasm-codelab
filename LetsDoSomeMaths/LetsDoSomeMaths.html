@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+    <title>JUG SummerCamp 2020 WebAssembly Codelab - Let's do some maths</title>
+    <style>
+        .row { margin: 16px; display: flex; flex-flow: row; }
+    </style>
+</head>
+<body>
+    <h1>JUG SummerCamp 2020 WebAssembly Codelab</h1>
+    <h2>Let's do some maths</h2>
+    
+    <div class="row">
+        <input id="input" type="number">
+    </div>
+    <div class="row">
+        <button id="doublerBtn" onclick="callDoubler()">x2</button>
+        <button id="squarerBtn" onclick="callSquarer()">^2</button>
+        <button id="halfBtn" onclick="callHalf()">/2</button>
+    </div>
+    <div class="row">
+        <input id="input2" type="number">
+    </div>
+    <div class="row">
+        <button id="addBtn" onclick="callAdd()">+</button>
+        <button id="subBtn" onclick="callSub()">-</button>
+        <button id="productBtn" onclick="callProduct()">*</button>
+        <button id="divideBtn" onclick="callDivide()">/</button>
+    </div>
+    <div id="result" class="row"></div>
+
+</body>
+
+<script src="./LetsDoSomeMaths.js"></script>
+<script>
+    function callDoubler() {
+        let val = document.getElementById('input').value;
+        let doubled = doubler(val);
+        let result = document.getElementById('result');
+        result.innerText = doubled;
+    }
+    function callSquarer() {
+        let val = document.getElementById('input').value;
+        let squared = square(val);
+        let result = document.getElementById('result');
+        result.innerText = squared;
+    }
+    function callHalf() {
+        let val = document.getElementById('input').value;
+        let res = half(val);
+        let result = document.getElementById('result');
+        result.innerText = res;
+    }
+    function callAdd() {
+        let val1 = document.getElementById('input').value;
+        let val2 = document.getElementById('input2').value;
+        let res = add(val1, val2);
+        let result = document.getElementById('result');
+        result.innerText = res;
+    }
+    function callSub() {
+        let val1 = document.getElementById('input').value;
+        let val2 = document.getElementById('input2').value;
+        let res = sub(val1, val2);
+        let result = document.getElementById('result');
+        result.innerText = res;
+    }
+    function callProduct() {
+        let val1 = document.getElementById('input').value;
+        let val2 = document.getElementById('input2').value;
+        let res = product(val1, val2);
+        let result = document.getElementById('result');
+        result.innerText = res;
+    }
+    function callDivide() {
+        let val1 = document.getElementById('input').value;
+        let val2 = document.getElementById('input2').value;
+        let res = divide(val1, val2);
+        let result = document.getElementById('result');
+        result.innerText = res;
+    }
+</script>
+</html>
